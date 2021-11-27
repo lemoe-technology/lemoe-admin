@@ -1,6 +1,6 @@
 {
   "name": "lemoe-admin",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "files": [
     "dist"
   ],
@@ -23,7 +23,7 @@
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore --fix lib"
   },
   "dependencies": {
-    "element-plus": "^1.2.0-beta.3",
+    "element-plus": "^1.2.0-beta.4",
     "icon-park-vue3": "^1.3.7",
     "lodash": "^4.17.21",
     "sortablejs": "^1.14.0",
