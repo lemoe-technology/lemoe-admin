@@ -227,7 +227,11 @@ const handleSearch = () => {
 };
 
 const handleReset = () => {
-  if (Object.values(form.value).some((_) => _)) {
+  if (
+    Object.values(form.value).some(
+      (field) => typeof field != 'undefined' && field !== ''
+    )
+  ) {
     formEl.value.resetFields();
     updateQuery(form);
   }
