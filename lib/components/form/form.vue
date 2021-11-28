@@ -356,6 +356,11 @@ const handleForeignForm = (id, column) => {
     success: () => initForeignOptions(column),
   });
 };
+
+defineExpose({
+  updateForm,
+  validate,
+});
 </script>
 
 <style lang="scss">

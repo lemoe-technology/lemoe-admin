@@ -51,7 +51,15 @@
                     v-for="value in getForeignValues(item, column)"
                     :key="value"
                   >
-                    {{ value[column.foreignOptions.field] }}
+                    {{
+                      value[
+                        lodash.get(
+                          column.options,
+                          'foreignOptions.field',
+                          'name'
+                        )
+                      ]
+                    }}
                     <el-icon
                       v-if="column.foreignOptions.view"
                       @click="handleForeignView(value.id, column)"
