@@ -92,7 +92,9 @@
                 </el-space>
               </template>
               <template v-else-if="column.type === 'paragraph'">
-                {{ getValue(item, column) }}
+                <span class="paragraph">
+                  {{ getValue(item, column) }}
+                </span>
               </template>
               <template v-else>
                 <slot
