@@ -193,7 +193,7 @@ const getValue = (data, column) => {
   const value = props.structure.pivot
     ? lodash.get(data, `${props.structure.pivot}.${column.name}`)
     : lodash.get(data, column.name);
-  return column.formatter ? column.formatter(value) : value;
+  return column.formatter ? column.formatter(value, data, column) : value;
 };
 
 const getForeignValue = (data, column) => {
