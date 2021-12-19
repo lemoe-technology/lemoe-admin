@@ -7,8 +7,9 @@
         type="primary"
         :icon="Plus"
         @click="$emit('operate', { action: 'store' })"
-        >新建</el-button
       >
+        新建
+      </el-button>
     </slot>
 
     <slot name="operation" />
