@@ -43,7 +43,11 @@
                   style="width: 200px"
                   :="column.typeOptions"
                   @change="
-                    (value) => emits('change', { name: column.name, value })
+                    (value) =>
+                      emits('change', {
+                        data: { name: column.name, value },
+                        form,
+                      })
                   "
                 />
                 <el-icon
@@ -61,7 +65,11 @@
                   :placeholder="column.title"
                   :="column.typeOptions"
                   @change="
-                    (value) => emits('change', { name: column.name, value })
+                    (value) =>
+                      emits('change', {
+                        data: { name: column.name, value },
+                        form,
+                      })
                   "
                 />
               </template>
@@ -72,7 +80,11 @@
                   type="textarea"
                   :="column.typeOptions"
                   @change="
-                    (value) => emits('change', { name: column.name, value })
+                    (value) =>
+                      emits('change', {
+                        data: { name: column.name, value },
+                        form,
+                      })
                   "
                 />
               </template>
@@ -82,7 +94,11 @@
                   :placeholder="column.title"
                   :="column.typeOptions"
                   @change="
-                    (value) => emits('change', { name: column.name, value })
+                    (value) =>
+                      emits('change', {
+                        data: { name: column.name, value },
+                        form,
+                      })
                   "
                 />
               </template>
@@ -96,7 +112,11 @@
                   style="width: 200px"
                   :="column.typeOptions"
                   @change="
-                    (value) => emits('change', { name: column.name, value })
+                    (value) =>
+                      emits('change', {
+                        data: { name: column.name, value },
+                        form,
+                      })
                   "
                 />
               </template>
@@ -105,7 +125,11 @@
                   v-model="form[column.name]"
                   :="column.typeOptions"
                   @change="
-                    (value) => emits('change', { name: column.name, value })
+                    (value) =>
+                      emits('change', {
+                        data: { name: column.name, value },
+                        form,
+                      })
                   "
                 >
                   <el-radio
@@ -121,7 +145,11 @@
                   v-model="form[column.name]"
                   :="column.typeOptions"
                   @change="
-                    (value) => emits('change', { name: column.name, value })
+                    (value) =>
+                      emits('change', {
+                        data: { name: column.name, value },
+                        form,
+                      })
                   "
                 >
                   <el-checkbox
@@ -141,7 +169,11 @@
                   value-format="YYYY-MM-DD"
                   :="column.typeOptions"
                   @change="
-                    (value) => emits('change', { name: column.name, value })
+                    (value) =>
+                      emits('change', {
+                        data: { name: column.name, value },
+                        form,
+                      })
                   "
                 />
               </template>
@@ -152,7 +184,11 @@
                   value-format="HH:mm:ss"
                   :="column.typeOptions"
                   @change="
-                    (value) => emits('change', { name: column.name, value })
+                    (value) =>
+                      emits('change', {
+                        data: { name: column.name, value },
+                        form,
+                      })
                   "
                 />
               </template>
@@ -164,7 +200,11 @@
                   value-format="YYYY-MM-DD HH:mm:ss"
                   :="column.typeOptions"
                   @change="
-                    (value) => emits('change', { name: column.name, value })
+                    (value) =>
+                      emits('change', {
+                        data: { name: column.name, value },
+                        form,
+                      })
                   "
                 />
               </template>
