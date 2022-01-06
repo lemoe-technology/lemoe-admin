@@ -52,13 +52,7 @@
                     :key="value"
                   >
                     {{
-                      value[
-                        lodash.get(
-                          column.options,
-                          'foreignOptions.field',
-                          'name'
-                        )
-                      ]
+                      value[lodash.get(column, 'foreignOptions.field', 'name')]
                     }}
                     <el-icon
                       v-if="column.foreignOptions.view"

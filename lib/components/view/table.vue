@@ -60,11 +60,7 @@
                     >
                       {{
                         value[
-                          lodash.get(
-                            column.options,
-                            'foreignOptions.field',
-                            'name'
-                          )
+                          lodash.get(column, 'foreignOptions.field', 'name')
                         ]
                       }}
                       <el-icon
