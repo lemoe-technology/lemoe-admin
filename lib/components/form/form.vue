@@ -136,8 +136,9 @@
                     v-for="option in column.options"
                     :key="option.value"
                     :label="option.value"
-                    >{{ option.label }}</el-radio
                   >
+                    {{ option.label }}
+                  </el-radio>
                 </el-radio-group>
               </template>
               <template v-else-if="column.type === 'checkbox'">

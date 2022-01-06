@@ -199,7 +199,7 @@ const getValue = (data, column) => {
 const getForeignValue = (data, column) => {
   const found = column.name.match(/^(\w+)_id$/);
   const model = column.foreignOptions.model || found[1];
-  const field = column.foreignOptions.name || 'name';
+  const field = column.foreignOptions.field || 'name';
   if (column.foreignOptions.isPivotForeignKey) {
     return lodash.get(data, field);
   } else if (props.structure.pivot) {
