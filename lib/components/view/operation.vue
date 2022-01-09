@@ -3,7 +3,7 @@
     <slot name="operation-store">
       <el-button
         v-if="structure.storable"
-        size="mini"
+        size="small"
         type="primary"
         :icon="Plus"
         @click="$emit('operate', { action: 'store' })"
@@ -22,7 +22,7 @@
         popper-class="column-config-table"
       >
         <template #reference>
-          <el-button size="mini" type="text" :icon="Setting" />
+          <el-button size="small" type="text" :icon="Setting" />
         </template>
         <el-table
           :key="structure.table.reduce((acc, value) => acc + value.name, '')"
@@ -44,7 +44,7 @@
 
       <el-tooltip content="刷新" placement="top">
         <el-button
-          size="mini"
+          size="small"
           type="text"
           :icon="Refresh"
           @click="handleSearch"

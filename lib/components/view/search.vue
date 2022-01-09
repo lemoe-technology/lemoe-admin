@@ -11,7 +11,7 @@
       <template v-for="column in searchableColumns" :key="column.name">
         <slot :name="`search-before-${column.name}`" :form="form" />
         <slot :name="`search-${column.name}`" :form="form" :column="column">
-          <el-form-item :label="column.title" :prop="column.name" size="mini">
+          <el-form-item :label="column.title" :prop="column.name" size="small">
             <slot
               :name="`search-${column.name}-content`"
               :form="form"
@@ -98,13 +98,13 @@
       <slot name="search-tail" :form="form" />
 
       <el-form-item>
-        <el-button type="default" size="mini" @click="handleReset"
+        <el-button type="default" size="small" @click="handleReset"
           >重置</el-button
         >
         <el-button
           type="primary"
           :loading="isLoading"
-          size="mini"
+          size="small"
           @click="handleSearch"
           >搜索</el-button
         >

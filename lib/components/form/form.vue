@@ -17,6 +17,7 @@
       :model="form"
       :rules="rules"
       label-width="120px"
+      @submit.prevent
     >
       <slot name="form-head" :form="form" />
       <template v-for="column in editableColumns" :key="column.name">
@@ -298,12 +299,52 @@ const rules = computed(() => {
     if (column.rules) {
       rules[column.name] = column.rules;
     } else {
-      if (['foreign', 'select', 'radio', 'checkbox'].includes(column.type)) {
+      if (
+        [
+          'foreign',
+          'select',
+          'radio',
+          'checkbox',
+          'date',
+          'time',
+          'datetime',
+        ].includes(column.type)
+      ) {
         rules[column.name] = [
           {
             required: true,
             message: `请选择${column.title}`,
             trigger: 'change',
+          },
+        ];
+      } else if (column.type === 'image') {
+        rules[column.name] = [
+          {
+            type: 'array',
+            required: true,
+            message: `请上传${column.title}`,
+          },
+        ];
+      } else if (column.type === 'text') {
+        rules[column.name] = [
+          {
+            required: true,
+            message: `请输入${column.title}`,
+            trigger: 'blur',
+          },
+          {
+            type: 'string',
+            max: 255,
+            message: `${column.title}不可超过255个字符`,
+          },
+        ];
+      } else if (column.type === 'number') {
+        rules[column.name] = [
+          {
+            type: 'number',
+            required: true,
+            message: `请输入${column.title}`,
+            trigger: 'blur',
           },
         ];
       } else {
