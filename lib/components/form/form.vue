@@ -25,6 +25,11 @@
         <slot :name="column.name" :form="form" :column="column">
           <el-form-item :label="column.title" :prop="column.name">
             <slot
+              :name="`${column.name}-prepend`"
+              :form="form"
+              :column="column"
+            />
+            <slot
               :name="`${column.name}-content`"
               :form="form"
               :column="column"
@@ -233,6 +238,11 @@
                 />
               </template>
             </slot>
+            <slot
+              :name="`${column.name}-append`"
+              :form="form"
+              :column="column"
+            />
           </el-form-item>
         </slot>
         <slot :name="`after-${column.name}`" :form="form" />
